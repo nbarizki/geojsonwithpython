@@ -224,11 +224,6 @@ sampling_gdf.head()
 # In[12]:
 
 
-def get_point(x, y):
-    return Point(x, y)
-
-get_point_vect = np.vectorize(get_point)
-
 sampling_gdf = sampling_gdf.assign(
     geometry=lambda x: geopandas.GeoSeries.from_xy(x.long, x.lat)
     )
